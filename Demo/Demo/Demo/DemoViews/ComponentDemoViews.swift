@@ -70,6 +70,7 @@ public enum ComponentDemoViews: String, CaseIterable {
     case coronaHelpView
     case iconLinkListView
     case transactionProcessSummaryObjectPageView
+    case votingView
 
     public static var items: [ComponentDemoViews] {
         allCases.sorted { $0.rawValue < $1.rawValue }
@@ -218,6 +219,8 @@ public enum ComponentDemoViews: String, CaseIterable {
             return DemoViewController<IconLinkListViewDemo>()
         case .transactionProcessSummaryObjectPageView:
             return DemoViewController<TransactionProcessSummaryObjectPageDemoView>()
+        case .votingView:
+            return DemoViewController<VotingDemoView>(dismissType: .dismissButton)
         }
     }
 }

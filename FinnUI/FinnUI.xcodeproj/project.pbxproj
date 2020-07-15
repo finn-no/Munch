@@ -18,10 +18,14 @@
 		4D7A6ED22498DBAF00AB2EBE /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A6ECF2498DBAF00AB2EBE /* SearchResultsView.swift */; };
 		4D7A6ED32498DBAF00AB2EBE /* SearchResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A6ED02498DBAF00AB2EBE /* SearchResultsListView.swift */; };
 		4D7A6ED42498DBAF00AB2EBE /* SearchResultsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A6ED12498DBAF00AB2EBE /* SearchResultsRowView.swift */; };
+		8D6802C1AAE7864C8B8104D2 /* VotingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6805A3E564B015A496AA34 /* VotingView.swift */; };
+		8D6804AE6ED266E00FD9F69E /* VotingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680BAC6684870378B53EFC /* VotingViewModel.swift */; };
 		8D68078190A301C047AD77D7 /* ChatAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68005160E043018354D1D4 /* ChatAvailabilityView.swift */; };
+		8D680920DFAE3F793288C028 /* VotingButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6805227BB8EB05E479F57F /* VotingButtonViewModel.swift */; };
 		8D6809470298B377E3ECB40D /* SaveSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680AB1F0F6BADB041131C2 /* SaveSearchView.swift */; };
 		8D6809ACFE4FFDA0D520F6A5 /* SaveSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680EE8C572248BEA776A69 /* SaveSearchViewModel.swift */; };
 		8D680A0E533C08A3917CB5A6 /* IconLinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680A37496BF0565734B3F9 /* IconLinkListView.swift */; };
+		8D680A320038DA1513138D57 /* VotingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6802831516CEE82743953E /* VotingButtonView.swift */; };
 		8D680BA15E0D7DDD24F2B6F4 /* IconLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6800020C0B60C3391DED10 /* IconLinkView.swift */; };
 		8D680F46D4A91C53631293F6 /* IconLinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68074598751CD26E9D7306 /* IconLinkViewModel.swift */; };
 		9B2A698D249797AC00E671B5 /* SingleImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A6979249797AC00E671B5 /* SingleImageProvider.swift */; };
@@ -99,9 +103,13 @@
 		4D7A6ED12498DBAF00AB2EBE /* SearchResultsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsRowView.swift; sourceTree = "<group>"; };
 		8D6800020C0B60C3391DED10 /* IconLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconLinkView.swift; sourceTree = "<group>"; };
 		8D68005160E043018354D1D4 /* ChatAvailabilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAvailabilityView.swift; sourceTree = "<group>"; };
+		8D6802831516CEE82743953E /* VotingButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingButtonView.swift; sourceTree = "<group>"; };
+		8D6805227BB8EB05E479F57F /* VotingButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingButtonViewModel.swift; sourceTree = "<group>"; };
+		8D6805A3E564B015A496AA34 /* VotingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingView.swift; sourceTree = "<group>"; };
 		8D68074598751CD26E9D7306 /* IconLinkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconLinkViewModel.swift; sourceTree = "<group>"; };
 		8D680A37496BF0565734B3F9 /* IconLinkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconLinkListView.swift; sourceTree = "<group>"; };
 		8D680AB1F0F6BADB041131C2 /* SaveSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchView.swift; sourceTree = "<group>"; };
+		8D680BAC6684870378B53EFC /* VotingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewModel.swift; sourceTree = "<group>"; };
 		8D680EE8C572248BEA776A69 /* SaveSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSearchViewModel.swift; sourceTree = "<group>"; };
 		9B2A6979249797AC00E671B5 /* SingleImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleImageProvider.swift; sourceTree = "<group>"; };
 		9B2A697A249797AC00E671B5 /* AuthorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewModel.swift; sourceTree = "<group>"; };
@@ -279,8 +287,20 @@
 				8D6802E2438E1A527CABD2CE /* ChatAvailability */,
 				8D68046F9EAC6A4768E7E8A1 /* SaveSearchView */,
 				8D68054F9CE41B8FB232572A /* IconLinkView */,
+				8D680E6D3999059BE249178D /* VotingView */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8D680E6D3999059BE249178D /* VotingView */ = {
+			isa = PBXGroup;
+			children = (
+				8D6805A3E564B015A496AA34 /* VotingView.swift */,
+				8D6802831516CEE82743953E /* VotingButtonView.swift */,
+				8D680BAC6684870378B53EFC /* VotingViewModel.swift */,
+				8D6805227BB8EB05E479F57F /* VotingButtonViewModel.swift */,
+			);
+			path = VotingView;
 			sourceTree = "<group>";
 		};
 		9B2A6976249797AC00E671B5 /* AdView */ = {
@@ -645,6 +665,10 @@
 				8D680BA15E0D7DDD24F2B6F4 /* IconLinkView.swift in Sources */,
 				8D680F46D4A91C53631293F6 /* IconLinkViewModel.swift in Sources */,
 				8D680A0E533C08A3917CB5A6 /* IconLinkListView.swift in Sources */,
+				8D6802C1AAE7864C8B8104D2 /* VotingView.swift in Sources */,
+				8D680A320038DA1513138D57 /* VotingButtonView.swift in Sources */,
+				8D6804AE6ED266E00FD9F69E /* VotingViewModel.swift in Sources */,
+				8D680920DFAE3F793288C028 /* VotingButtonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

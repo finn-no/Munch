@@ -282,4 +282,8 @@ class ComponentViewTests: XCTestCase {
     func testTransactionProcessSummaryObjectPageView() {
         snapshot(.transactionProcessSummaryObjectPageView)
     }
+
+    func testVotingView() {
+        snapshot(.votingView)
+    }
 }
