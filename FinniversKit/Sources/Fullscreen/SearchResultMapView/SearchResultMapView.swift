@@ -15,30 +15,31 @@ public protocol SearchResultMapViewDelegate: AnyObject {
 
 public final class SearchResultMapView: UIView {
 
-    private enum AnnotationIdentifier: String {
-        case cluster = "clusterPOI"
-        case poi = "POI"
-    }
+    // MARK: - Public properties
 
     public weak var delegate: SearchResultMapViewDelegate?
 
     public var zoomLevel: Double {
-        return mapView.zoomLevel
+        mapView.zoomLevel
     }
 
     public var centerCoordinate: CLLocationCoordinate2D {
-        return mapView.centerCoordinate
+        mapView.centerCoordinate
     }
 
     public var visibleMapRect: MKMapRect {
-        return mapView.visibleMapRect
+        mapView.visibleMapRect
     }
+
+    // MARK: - Private properties
 
     private lazy var mapView: MKMapView = {
         let view = MKMapView()
         view.delegate = self
         view.isRotateEnabled = false
         view.isPitchEnabled = false
+        view.register(PinAnnotationView.self)
+        view.register(ClusterAnnotationView.self)
         return view
     }()
 
@@ -59,7 +60,7 @@ public final class SearchResultMapView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public
+    // MARK: - Public methods
 
     public func configure(withInitialRegion region: MKCoordinateRegion, andShowingUserLocation showingUserLocation: Bool) {
         setRegion(region, animated: false)
@@ -141,23 +142,22 @@ public final class SearchResultMapView: UIView {
         NSLayoutConstraint.activate([
             mapSettingsButton.topAnchor.constraint(equalTo: mapView.topAnchor, constant: .spacingS),
             mapSettingsButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -.spacingS)
-            ])
+        ])
     }
 
 }
 
-// MARK: - Extensions
+// MARK: - MapSettingsViewDelegate
 
 extension SearchResultMapView: MapSettingsViewDelegate {
-
     public func mapSettingsView(_ view: MapSettingsView, didSelect action: MapSettingsView.Action) {
         delegate?.searchResultMapView(self, didSelect: action, in: view)
     }
-
 }
 
-extension SearchResultMapView: MKMapViewDelegate {
+// MARK: - MKMapViewDelegate
 
+extension SearchResultMapView: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let overlay = overlay as? MKTileOverlay {
             return MKTileOverlayRenderer(tileOverlay: overlay)
@@ -167,16 +167,20 @@ extension SearchResultMapView: MKMapViewDelegate {
     }
 
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else { return nil }
+        guard
+            !(annotation is MKUserLocation),
+            let annotation = annotation as? SearchResultMapViewAnnotation
+        else { return nil }
 
-        if let annotation = annotation as? SearchResultMapViewAnnotation {
-            let marker = MKAnnotationView(annotation: annotation, reuseIdentifier: annotation.isCluster ? AnnotationIdentifier.cluster.rawValue : AnnotationIdentifier.poi.rawValue)
-            marker.image = annotation.image
-            marker.centerOffset = CGPoint(x: 0.5, y: 1.0)
-            return marker
+        let annotationView: MKAnnotationView
+        if annotation.hits == 1 {
+            annotationView = mapView.dequeue(PinAnnotationView.self, for: annotation)
+        } else {
+            annotationView = mapView.dequeue(ClusterAnnotationView.self, for: annotation)
         }
 
-        return nil
+        annotationView.centerOffset = CGPoint(x: 0.5, y: 1.0)
+        return annotationView
     }
 
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -204,5 +208,4 @@ extension SearchResultMapView: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         delegate?.searchResultMapView(self, didUpdate: userLocation)
     }
-
 }

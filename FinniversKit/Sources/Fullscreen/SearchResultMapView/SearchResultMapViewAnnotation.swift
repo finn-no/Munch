@@ -5,6 +5,5 @@
 import MapKit
 
 public protocol SearchResultMapViewAnnotation: MKAnnotation {
-    var isCluster: Bool { get }
-    var image: UIImage { get }
+    var hits: Int { get }
 }

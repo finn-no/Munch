@@ -6,21 +6,16 @@ import MapKit
 import FinniversKit
 
 public class SearchResultMapViewDemoAnnotation: NSObject, SearchResultMapViewAnnotation {
-
-    public let isCluster: Bool
-    public let image: UIImage
+    public let hits: Int
     public let coordinate: CLLocationCoordinate2D
 
-    init(coordinate: CLLocationCoordinate2D, image: UIImage, isCluster: Bool) {
+    init(coordinate: CLLocationCoordinate2D, hits: Int) {
         self.coordinate = coordinate
-        self.isCluster = isCluster
-        self.image = image
+        self.hits = hits
     }
-
 }
 
 public struct SearchResultMapViewAnnotationFactory {
-
     public static let centerLocation = CLLocationCoordinate2D(latitude: 59.9458, longitude: 10.7800)
 
     public static var tileOverlay: MKTileOverlay = {
@@ -30,17 +25,15 @@ public struct SearchResultMapViewAnnotationFactory {
     }()
 
     public static func create(numberOfAnnotations: Int) -> [SearchResultMapViewDemoAnnotation] {
-        return (0 ..< numberOfAnnotations).map { _ in
-            let isCluster = Double.random(in: 0...1) < 0.2
-            let image = UIImage(named: isCluster ? .distance : .pin)
+        (0 ..< numberOfAnnotations).map { index in
+            let hits = index + 1
             let latitude = SearchResultMapViewAnnotationFactory.centerLocation.latitude + Double.random(in: 0...0.0065)
             let longitude = SearchResultMapViewAnnotationFactory.centerLocation.longitude + Double.random(in: 0...0.0045)
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 
             return SearchResultMapViewDemoAnnotation(
                 coordinate: coordinate,
-                image: image,
-                isCluster: isCluster
+                hits: hits
             )
         }
     }
