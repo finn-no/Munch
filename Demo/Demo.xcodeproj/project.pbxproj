@@ -190,6 +190,7 @@
 		5DEAC3C425C164D9003376AD /* IconButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEAC3C325C164D9003376AD /* IconButtonDemoView.swift */; };
 		714B9357253736AD00801C99 /* SendInviteDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B9356253736AD00801C99 /* SendInviteDemoView.swift */; };
 		71C6AA992549D28800D78269 /* MessageUserRequiredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6AA982549D28800D78269 /* MessageUserRequiredData.swift */; };
+		8D68030CF404D02BA5F8A618 /* NumberedListDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68050D2A01257562243914 /* NumberedListDemoView.swift */; };
 		8D6807650CCEB53349934D26 /* PromotionFrontpageViewDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680B19A0BD0C1AFD25A378 /* PromotionFrontpageViewDemoView.swift */; };
 		8D680A0AEE158DE3250140C2 /* CompactMarketsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D680BCAFCC5ACA549D1B6F3 /* CompactMarketsDemoView.swift */; };
 		91D637DA2488F70A0066D4D0 /* ConfettiDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D637D92488F70A0066D4D0 /* ConfettiDemoView.swift */; };
@@ -411,6 +412,7 @@
 		5DEAC3C325C164D9003376AD /* IconButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonDemoView.swift; sourceTree = "<group>"; };
 		714B9356253736AD00801C99 /* SendInviteDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendInviteDemoView.swift; sourceTree = "<group>"; };
 		71C6AA982549D28800D78269 /* MessageUserRequiredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUserRequiredData.swift; sourceTree = "<group>"; };
+		8D68050D2A01257562243914 /* NumberedListDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberedListDemoView.swift; sourceTree = "<group>"; };
 		8D680B19A0BD0C1AFD25A378 /* PromotionFrontpageViewDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionFrontpageViewDemoView.swift; sourceTree = "<group>"; };
 		8D680BCAFCC5ACA549D1B6F3 /* CompactMarketsDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactMarketsDemoView.swift; sourceTree = "<group>"; };
 		91D637D92488F70A0066D4D0 /* ConfettiDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiDemoView.swift; sourceTree = "<group>"; };
@@ -849,6 +851,7 @@
 				46E77358242CEF09008A5E93 /* VerificationView */,
 				46E7730A242CEF09008A5E93 /* Viewings */,
 				46E772F4242CEF09008A5E93 /* VisibilityDrivenTitleView */,
+				8D680C5C0B76EA3807545F4D /* NumberedListView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1639,6 +1642,14 @@
 			path = MessageUserRequired;
 			sourceTree = "<group>";
 		};
+		8D680C5C0B76EA3807545F4D /* NumberedListView */ = {
+			isa = PBXGroup;
+			children = (
+				8D68050D2A01257562243914 /* NumberedListDemoView.swift */,
+			);
+			path = NumberedListView;
+			sourceTree = "<group>";
+		};
 		8D680F2A94B83E3CB46FF347 /* CompactMarkets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1747,7 +1758,7 @@
 			);
 			mainGroup = 46AE6FB7242BADC9007BB005;
 			packageReferences = (
-				46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing.git" */,
 			);
 			productRefGroup = 46AE6FC1242BADC9007BB005 /* Products */;
 			projectDirPath = "";
@@ -1998,6 +2009,7 @@
 				46E7743F242CEF0A008A5E93 /* ColorDemoView.swift in Sources */,
 				8D680A0AEE158DE3250140C2 /* CompactMarketsDemoView.swift in Sources */,
 				8D6807650CCEB53349934D26 /* PromotionFrontpageViewDemoView.swift in Sources */,
+				8D68030CF404D02BA5F8A618 /* NumberedListDemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2265,7 +2277,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+		46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
@@ -2278,7 +2290,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		46E77597242D6890008A5E93 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			package = 46E77596242D6890008A5E93 /* XCRemoteSwiftPackageReference "swift-snapshot-testing.git" */;
 			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */

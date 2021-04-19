@@ -258,4 +258,8 @@ class ComponentViewTests: XCTestCase {
     func testPromoSlidesView() {
         snapshot(.promoSlidesView)
     }
+
+    func testNumberedListView() {
+        snapshot(.numberedListView)
+    }
 }
