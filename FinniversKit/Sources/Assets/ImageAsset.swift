@@ -133,6 +133,7 @@ enum ImageAsset: String {
     case ornamentStar
     case pencilPaper
     case pin
+    case playVideo
     case plusMini
     case rate
     case rated
@@ -269,6 +270,7 @@ enum ImageAsset: String {
             .ornamentStar,
             .pencilPaper,
             .pin,
+            .playVideo,
             .plusMini,
             .rate,
             .rated,
